@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>안면 등록</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+    <main>
+
+        <h1>등록 화면</h1>
+
+        <div id="camera-section">
+
+            <canvas id="camera-sensor"></canvas>
+
+            <!-- 기기의 카메라에 접근하여 영상을 페이지에 재생한다. -->
+            <video id="camera-view" autoplay playsinline></video>
+            <img src="//:0" alt="" id="camera-output" class="hidden">
+
+        </div>
+        <div id="button-section">
+
+            <div id="result" class="hidden">
+                <input type="text" id="name-input" placeholder="이름을 입력하세요." required autofocus>
+                <input type="file" id="id-card-input" accept='image/*'>
+                <button id="reg-btn">등록 진행</button>
+            </div>
+            
+            <button id="camera-trigger">사진촬영</button>
+
+        </div>
+
+
+    </main>
+    <script src="js/camera.js"></script>
+    <script src="js/registration.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: bisque;
+}
+
+main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    flex: 1 1 0;
+}
+
+#camera-section {
+    flex: 4 1 0;
+    width: 440px;
+}
+
+#camera,
+#camera-view,
+#camera-sensor,
+#camera-output {
+    position: absolute;
+    width: 440px;
+    height: 50vh;
+    object-fit: cover;
+}
+
+#camera-view,
+#camera-sensor,
+#camera-output {
+    transform: scaleX(-1);
+    filter: FlipH;
+}
+
+#button-section {
+    flex: 2 1 0;
+    width: 440px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.taken {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}

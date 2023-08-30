@@ -1,0 +1,43 @@
+spring:
+  devtools:
+    livereload:
+      enabled: true
+  freemarker:
+    cache: false
+  jpa:
+    # 전송 쿼리 확인
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@127.0.0.1:1521/XE
+    username: 'facial'
+    password: '0310'
+
+springdoc:
+  packages-to-scan: com.ian.controller.api
+  default-consumes-media-type: text/plain;charset=UTF-8
+  default-produces-media-type: text/plain;charset=UTF-8
+  swagger-ui:
+    path: /
+    disable-swagger-default-url: true
+    display-request-duration: true
+    operations-sorter: alpha
+
+#
+server:
+  port: 8008
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+
+#Http 요청/응답 로깅
+#logging:
+#  level:
+#    org:
+#      apache:
+#        coyote:
+#          http11: debug
