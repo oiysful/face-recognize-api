@@ -1,10 +1,7 @@
 package com.ian.entity.face;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.domain.Persistable;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -20,7 +17,7 @@ public class UserFacialDataA implements Persistable<Long> {
     @Id
     private Long sequence;
 
-    @Column(nullable = false)
+    @Column(name = "USER_ID", nullable = false)
     private Long userId;
 
     @Column(name = "FACIAL_DATA_A", nullable = false, length = 2000)

@@ -3,6 +3,8 @@ package com.ian.service.data;
 import com.google.gson.Gson;
 import com.ian.dto.api.naver.FaceCalc;
 import com.ian.dto.face.FacialDataSaveRequest;
+import com.ian.dto.face.FindAllFacialDataA;
+import com.ian.dto.face.FindAllFacialDataB;
 import com.ian.dto.id.IdentificationSaveRequest;
 import com.ian.entity.face.FacialDataRepositoryA;
 import com.ian.entity.face.FacialDataRepositoryB;
@@ -14,7 +16,6 @@ import com.ian.entity.identification.IdentificationRepositoryA;
 import com.ian.entity.identification.IdentificationRepositoryB;
 import com.ian.service.AES256;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
@@ -136,8 +137,8 @@ public class DataService {
      */
     public Map<Long, List<FaceCalc>> getAllFacialData(AES256 aes256) throws Exception {
         // 분리되어 저장된 전체 안면 정보 SELECT하여 userId와 sequence로 정렬
-        List<UserFacialDataA> allFacialDataA = faceRepositoryA.findAll(Sort.by(Sort.Order.asc("userId"), Sort.Order.asc("sequence")));
-        List<UserFacialDataB> allFacialDataB = faceRepositoryB.findAll(Sort.by(Sort.Order.asc("userId"), Sort.Order.asc("sequence")));
+        List<FindAllFacialDataA> allFacialDataA = faceRepositoryA.findAllFaces();
+        List<FindAllFacialDataB> allFacialDataB = faceRepositoryB.findAllFaces();
 
         int listSize = allFacialDataA.size();
 
