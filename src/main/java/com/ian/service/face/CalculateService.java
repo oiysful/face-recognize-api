@@ -96,11 +96,14 @@ public class CalculateService {
      * @return 좌표 쌍의 거리
      * @author IAN
      */
-    private Double getDistance(PlaceObject a, PlaceObject b) {
+    private double getDistance(PlaceObject a, PlaceObject b) {
 
         double xd = b.getX()-a.getX();
         double yd = b.getY()-a.getY();
 
-        return Math.sqrt(xd + yd);
+        double abs = Math.abs(xd + yd);
+        double result = Math.sqrt(abs);
+
+        return Double.isNaN(result) ? 0 : result;
     }
 }
